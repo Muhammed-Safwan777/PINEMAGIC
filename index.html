@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PineMagic Bromelain: Usage &amp; Safety Guide</title>
+  <meta name="description" content="Official usage, safety and dosage guide for PineMagic Bromelain 2400 GDU (15 g) from HIZLI ESCALA LLP. Read the dosage and warnings before use.">
+  <meta name="theme-color" content="#133A33">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pine: { 950: '#0E2E28', 900: '#133A33', 800: '#1A4A41', 700: '#1F5A4D', 600: '#2B6E5F' },
+            leaf: '#5FA893',
+            sage: { 50: '#F4FAF7', 100: '#E3F1EB', 200: '#CBE6DA', 300: '#B4DCCC' },
+            mist: '#EEF4F1',
+            ink: '#1B2E29'
+          },
+          fontFamily: {
+            serif: ['"Source Serif 4"', 'Georgia', 'serif'],
+            sans: ['"Atkinson Hyperlegible"', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; scroll-padding-top: 1rem; -webkit-text-size-adjust: 100%; }
+    body { font-feature-settings: "kern"; }
+    .font-serif { font-optical-sizing: auto; }
+
+    :focus-visible { outline: 3px solid #5FA893; outline-offset: 3px; border-radius: 6px; }
+    .on-dark :focus-visible { outline-color: #B4DCCC; }
+
+    /* Timing timeline (span: 1 hr before meal to 3 hrs after = 240 min) */
+    .tl { position: relative; padding-top: 2.75rem; }
+    .tl-track { position: relative; height: 3.25rem; border-radius: 999px; background: #EEF4F1; box-shadow: inset 0 0 0 1px #CBE6DA; }
+    .tl-win { position: absolute; top: 0; bottom: 0; border-radius: 999px; background: #5FA893;
+      transition: left .45s cubic-bezier(.2,.8,.2,1), width .45s cubic-bezier(.2,.8,.2,1), opacity .3s; }
+    .tl-win .tl-label { position: absolute; bottom: calc(100% + .55rem); white-space: nowrap; font-weight: 700; font-size: .875rem; color: #1F5A4D; }
+    .tl-meal { position: absolute; left: 25%; top: 50%; transform: translate(-50%, -50%); z-index: 2;
+      width: 2.25rem; height: 2.25rem; border-radius: 999px; background: #fff; box-shadow: 0 0 0 2px #133A33; display: grid; place-items: center; color: #133A33; }
+    .tl-ticks { position: relative; height: 1.5rem; margin-top: .6rem; font-size: .8125rem; color: #4A5E58; }
+    .tl-ticks span { position: absolute; top: 0; transform: translateX(-50%); white-space: nowrap; }
+    .tl-ticks span:first-child { transform: none; }
+    .tl-ticks span:last-child { transform: translateX(-100%); }
+    .tl-ticks .meal-tick { font-weight: 700; color: #133A33; }
+
+    .tl[data-mode="digest"] .w1 { left: 16%; width: 22%; }
+    .tl[data-mode="digest"] .w1 .tl-label { left: 50%; transform: translateX(-50%); }
+    .tl[data-mode="digest"] .w2 { left: 75%; width: 0; opacity: 0; }
+    .tl[data-mode="systemic"] .w1 { left: 0; width: 12.5%; }
+    .tl[data-mode="systemic"] .w1 .tl-label { left: 0; }
+    .tl[data-mode="systemic"] .w2 { left: 75%; width: 25%; opacity: 1; }
+    .tl .w2 .tl-label { right: 0; }
+    .tl[data-mode="digest"] .only-systemic, .tl[data-mode="systemic"] .only-digest { display: none; }
+
+    /* FAQ accordion */
+    .acc-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .3s ease; }
+    .acc-panel > div { overflow: hidden; }
+    .acc-item[data-open="true"] .acc-panel { grid-template-rows: 1fr; }
+    .acc-icon { transition: transform .3s ease; }
+    .acc-item[data-open="true"] .acc-icon { transform: rotate(45deg); }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0s !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body class="bg-white font-sans text-ink antialiased text-[17px] leading-relaxed">
+
+  <a href="#dosage" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-pine-900 focus:px-4 focus:py-2 focus:text-white">Skip to dosage</a>
+
+  <!-- Header -->
+  <header id="top" class="bg-white">
+    <div class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-3">
+      <a href="#top" class="flex items-center gap-2.5" aria-label="PineMagic home">
+        <img src="assets/logo-mark.png" alt="" class="h-11 w-auto">
+        <img src="assets/logo-wordmark.png" alt="PineMagic" class="h-[22px] w-auto translate-y-[3px]">
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. Verification -->
+    <section id="intro" class="border-y border-sage-200 bg-mist">
+      <div class="mx-auto grid max-w-5xl grid-cols-[minmax(0,1fr)] items-center gap-10 px-5 py-8 md:grid-cols-[1.4fr_0.6fr] md:py-12">
+        <div class="min-w-0">
+          <p class="font-bold text-pine-700">HIZLI ESCALA LLP</p>
+          <h1 class="mt-1 text-balance font-serif text-[2.35rem] font-semibold leading-[1.1] tracking-[-0.01em] text-pine-900 md:text-[3.25rem]">Usage &amp; safety guide</h1>
+          <div class="mt-3 flex items-start gap-4">
+            <p class="max-w-[34rem] flex-1 text-lg text-ink/80">Official usage, safety and dosage guide for PineMagic Bromelain 2400&nbsp;GDU, 15&nbsp;g high-purity enzyme powder.</p>
+            <img src="assets/jar.webp" alt="PineMagic 15 g bromelain jar with black cap" class="h-28 w-[88px] shrink-0 rounded-xl object-cover object-[50%_40%] ring-1 ring-sage-200 md:hidden">
+          </div>
+
+          <nav aria-label="On this page" class="-mx-5 mt-6 overflow-x-auto px-5">
+            <ul class="flex w-max gap-2 text-[15px] font-bold">
+              <li><a href="#dosage" class="block rounded-full bg-pine-900 px-4 py-2 text-white">Dosage</a></li>
+              <li><a href="#timing" class="block rounded-full bg-white px-4 py-2 text-pine-800 ring-1 ring-sage-300">When to take it</a></li>
+              <li><a href="#safety" class="block rounded-full bg-red-50 px-4 py-2 text-red-800 ring-1 ring-red-200">Warnings</a></li>
+              <li><a href="#faq" class="block rounded-full bg-white px-4 py-2 text-pine-800 ring-1 ring-sage-300">FAQ</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <figure class="hidden w-full max-w-[290px] justify-self-end md:block">
+          <img src="assets/jar.webp" alt="PineMagic 15 g bromelain jar: a clear square jar with a black screw cap, filled with off-white powder" class="aspect-[4/5] w-full rounded-[28px] object-cover shadow-[0_24px_48px_-24px_rgba(19,58,51,.45)] ring-1 ring-sage-200">
+          <figcaption class="mt-3 text-[15px] text-ink/70">Your jar: 15&nbsp;g, clear, with a black screw cap. The small steel measuring spoon is inside.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 2. Dosage -->
+    <section id="dosage" class="on-dark bg-pine-900 text-white">
+      <div class="mx-auto max-w-5xl px-5 py-12 md:py-20">
+        <div class="flex items-center gap-4 md:gap-8">
+          <span aria-hidden="true" class="font-serif text-[7.5rem] font-semibold leading-[0.8] text-sage-300 md:text-[12.5rem]">½</span>
+          <div>
+            <p class="text-sage-200">Correct dosage</p>
+            <h2 class="mt-1 text-balance font-serif text-[2rem] font-semibold leading-[1.1] md:text-[3.5rem]">Take only half a spoon, once a day</h2>
+          </div>
+        </div>
+
+        <figure class="mt-8 md:mt-10">
+          <img src="assets/dosage-spoons.webp" width="1024" height="572" alt="Two hands holding spoons. Left, marked with a green tick: a level half spoon of powder, the correct amount. Right, marked with a red cross: a heaped, overflowing spoon, too much." class="h-auto w-full rounded-xl shadow-md ring-1 ring-white/10">
+          <figcaption class="mt-3 flex flex-wrap gap-x-6 gap-y-1 text-[15px] text-sage-100">
+            <span class="flex items-center gap-2"><span class="grid h-5 w-5 place-items-center rounded-full bg-[#22A15A] text-white"><svg viewBox="0 0 12 12" class="h-3 w-3" aria-hidden="true"><path d="M2.5 6.2l2.2 2.1 4.8-4.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Level half spoon: correct</span>
+            <span class="flex items-center gap-2"><span class="grid h-5 w-5 place-items-center rounded-full bg-[#E5484D] text-white"><svg viewBox="0 0 12 12" class="h-3 w-3" aria-hidden="true"><path d="M3.5 3.5l5 5M8.5 3.5l-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>Heaped spoon: too much</span>
+          </figcaption>
+        </figure>
+
+        <div class="mt-10 grid gap-10 md:grid-cols-2 md:gap-12">
+          <div>
+            <p class="font-serif text-[1.6rem] font-semibold leading-snug md:text-[1.85rem]">Use only 1 half-spoon (approx. 250–500&nbsp;mg) once per day.</p>
+            <p class="mt-3 text-sage-100/90">A specific small steel measuring spoon is provided inside the 15&nbsp;g container. Always use that spoon, not a kitchen teaspoon, which holds far more.</p>
+          </div>
+          <div>
+            <h3 class="font-serif text-xl font-semibold">How to prepare it</h3>
+            <ol class="mt-4 space-y-4">
+              <li class="flex gap-4"><span class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-sage-300 font-bold text-pine-900">1</span><span class="pt-0.5">Fill the steel spoon halfway and level it off. Don't heap it.</span></li>
+              <li class="flex gap-4"><span class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-sage-300 font-bold text-pine-900">2</span><span class="pt-0.5">Stir it into a glass of normal, room-temperature water.</span></li>
+              <li class="flex gap-4"><span class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-sage-300 font-bold text-pine-900">3</span><span class="pt-0.5">Drink it at the right time for your need. <a href="#timing" class="font-bold text-sage-300 underline decoration-sage-300/50 underline-offset-4 hover:decoration-sage-300">See when to take it</a></span></li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="mt-10 flex gap-4 rounded-xl border-l-8 border-red-600 bg-[#FEF3F2] p-5 text-red-950 md:items-center md:p-6">
+          <svg viewBox="0 0 32 32" class="h-10 w-10 shrink-0 text-red-700" aria-hidden="true">
+            <path d="M16 4c1.5 4 6.5 7 6.5 13a6.5 6.5 0 01-13 0c0-3 1.5-4.5 2.5-6 .5 2 1.5 3 2.5 3.5C14 10 14.5 7 16 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M5 27L27 5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+          <div>
+            <p class="text-lg font-bold leading-snug text-red-800">Critical: never mix with hot water, tea or hot liquids.</p>
+            <p class="mt-1">Heat destroys the active enzymes completely, and the powder will no longer work.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Timing -->
+    <section id="timing" class="bg-white">
+      <div class="mx-auto max-w-5xl px-5 py-12 md:py-20">
+        <h2 class="max-w-[28ch] text-balance font-serif text-[1.9rem] font-semibold leading-[1.15] text-pine-900 md:text-[2.6rem]">How to take it based on your needs</h2>
+        <p class="mt-3 max-w-[38rem] text-ink/80">Bromelain works in two different ways, so the timing changes with your reason for taking it. Choose yours.</p>
+
+        <div role="tablist" aria-label="Reason for taking bromelain" class="mt-6 grid grid-cols-2 gap-1 rounded-2xl bg-mist p-1 ring-1 ring-sage-200 md:inline-grid md:w-auto">
+          <button role="tab" id="tab-digest" aria-selected="true" aria-controls="panel-digest" data-mode="digest"
+            class="tab rounded-xl px-3 py-2.5 text-[15px] font-bold leading-tight md:px-6 md:text-base">Digestive support</button>
+          <button role="tab" id="tab-systemic" aria-selected="false" aria-controls="panel-systemic" data-mode="systemic" tabindex="-1"
+            class="tab rounded-xl px-3 py-2.5 text-[15px] font-bold leading-tight md:px-6 md:text-base">Inflammation, joints &amp; sinus</button>
+        </div>
+
+        <div class="mt-8 grid items-center gap-8 md:grid-cols-[0.9fr_1.1fr] md:gap-14">
+          <div>
+            <div role="tabpanel" id="panel-digest" aria-labelledby="tab-digest" tabindex="0">
+              <h3 class="font-serif text-2xl font-semibold text-pine-900">Take it with your meal</h3>
+              <p class="mt-2">Take your half-spoon <strong>immediately before or right after</strong> eating. With food in your stomach, bromelain helps break down the proteins in your meal.</p>
+            </div>
+            <div role="tabpanel" id="panel-systemic" aria-labelledby="tab-systemic" tabindex="0" hidden>
+              <h3 class="font-serif text-2xl font-semibold text-pine-900">Take it on an empty stomach</h3>
+              <p class="mt-2">Take it either <strong>30 minutes before a meal</strong> or <strong>at least 2 hours after</strong> one. With no food to work on, bromelain is absorbed into your bloodstream, where it can act on swelling, joint pain and sinus congestion.</p>
+            </div>
+            <p class="mt-4 text-[15px] text-ink/70">Either way, it's still one half-spoon a day.</p>
+          </div>
+
+          <div class="tl" id="timeline" data-mode="digest" aria-hidden="true">
+            <div class="tl-track">
+              <div class="tl-win w1">
+                <span class="tl-label only-digest">Just before or right after</span>
+                <span class="tl-label only-systemic">30 min before or earlier</span>
+              </div>
+              <div class="tl-win w2"><span class="tl-label">2 hrs after or later</span></div>
+              <div class="tl-meal">
+                <svg viewBox="0 0 24 24" class="h-5 w-5"><circle cx="12" cy="12" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 4v5.5M5 4v5.5M3 9.5h2M4 9.5V20M21 4c-1.6 1-2.2 3-2.2 5.5V13H21V20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+            </div>
+            <div class="tl-ticks">
+              <span style="left:0">−1 hr</span>
+              <span class="meal-tick" style="left:25%">Meal</span>
+              <span style="left:50%">+1 hr</span>
+              <span style="left:75%">+2 hrs</span>
+              <span style="left:100%">+3 hrs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Benefits -->
+    <section id="benefits" class="border-y border-sage-200 bg-mist">
+      <div class="mx-auto max-w-5xl px-5 py-12 md:py-20">
+        <h2 class="font-serif text-[1.9rem] font-semibold leading-[1.15] text-pine-900 md:text-[2.6rem]">What bromelain may help with</h2>
+        <p class="mt-3 max-w-[40rem] text-ink/80">Bromelain is a group of protein-digesting enzymes from the pineapple plant. Research and traditional use point to these areas. It's a food supplement, not a medicine, and results vary from person to person.</p>
+
+        <ul class="mt-8 grid gap-x-12 md:grid-cols-2">
+          <li class="flex gap-4 border-t border-sage-300 py-6">
+            <span class="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-white text-pine-700 ring-1 ring-sage-300">
+              <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.5l2.6 7"/><path d="M13.4 14.5l2.6 7"/><circle cx="12" cy="12" r="3"/><path d="M5.2 9.5a7.5 7.5 0 000 5M18.8 9.5a7.5 7.5 0 010 5"/></svg>
+            </span>
+            <div>
+              <h3 class="font-serif text-xl font-semibold text-pine-900">Inflammation &amp; joint support</h3>
+              <p class="mt-1 text-ink/85">Historically used to help ease soft-tissue swelling, joint stiffness and sprains, and for arthritis comfort.</p>
+            </div>
+          </li>
+          <li class="flex gap-4 border-t border-sage-300 py-6">
+            <span class="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-white text-pine-700 ring-1 ring-sage-300">
+              <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h10.5a2.5 2.5 0 10-2.5-2.5"/><path d="M3 13h15a3 3 0 11-3 3"/><path d="M3 17h6"/></svg>
+            </span>
+            <div>
+              <h3 class="font-serif text-xl font-semibold text-pine-900">Respiratory &amp; sinus health</h3>
+              <p class="mt-1 text-ink/85">May help reduce the swelling and congestion that come with chronic sinusitis and allergies, making it easier to breathe.</p>
+            </div>
+          </li>
+          <li class="flex gap-4 border-t border-sage-300 py-6">
+            <span class="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-white text-pine-700 ring-1 ring-sage-300">
+              <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2.5v4c0 1.5-1 2.3-2.2 3C5 10.6 4 12.4 4 14.8 4 18.5 7 21.5 11 21.5c4.4 0 8-3 8-7.4 0-3.3-2.2-5.4-5-5.4-1.4 0-2.5.6-3 1.6"/><path d="M15 2.5v2.5c0 1.2.6 2.2 1.5 2.9"/></svg>
+            </span>
+            <div>
+              <h3 class="font-serif text-xl font-semibold text-pine-900">Digestive aid</h3>
+              <p class="mt-1 text-ink/85">Helps break proteins down into amino acids, which may relieve bloating, gas and indigestion.</p>
+            </div>
+          </li>
+          <li class="flex gap-4 border-t border-sage-300 py-6">
+            <span class="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-white text-pine-700 ring-1 ring-sage-300">
+              <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5S3 15.2 3 8.9A4.4 4.4 0 0112 6.6a4.4 4.4 0 019 2.3c0 6.3-9 11.6-9 11.6z"/><path d="M6 12h3l1.5-2.5 2 5 1.5-2.5h4"/></svg>
+            </span>
+            <div>
+              <h3 class="font-serif text-xl font-semibold text-pine-900">Heart &amp; circulation</h3>
+              <p class="mt-1 text-ink/85">Reduces platelet clumping, which may support healthy blood circulation. This same effect is why it must not be combined with blood thinners.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 5. Safety -->
+    <section id="safety" class="bg-[#FFF6F4]">
+      <div class="bg-red-700 text-white">
+        <div class="mx-auto flex max-w-5xl items-center gap-4 px-5 py-7 md:py-9">
+          <svg viewBox="0 0 32 32" class="h-11 w-11 shrink-0 md:h-14 md:w-14" aria-hidden="true"><path d="M16 3.5L30 28H2z" fill="#FDE68A" stroke="#FDE68A" stroke-width="2" stroke-linejoin="round"/><path d="M16 12v7.5" stroke="#7F1D1D" stroke-width="2.8" stroke-linecap="round"/><circle cx="16" cy="23.6" r="1.7" fill="#7F1D1D"/></svg>
+          <div>
+            <h2 class="text-balance font-serif text-[1.85rem] font-semibold leading-[1.1] md:text-[2.6rem]">Safety warnings: read before your first dose</h2>
+            <p class="mt-1 text-red-100">Bromelain is natural, but it isn't safe for everyone.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mx-auto max-w-5xl space-y-5 px-5 py-10 md:py-14">
+        <article class="rounded-2xl border-l-[6px] border-red-600 bg-white p-5 ring-1 ring-red-200 md:p-7">
+          <h3 class="flex items-start gap-3 text-xl font-bold leading-snug text-red-800">
+            <svg viewBox="0 0 24 24" class="mt-0.5 h-6 w-6 shrink-0" aria-hidden="true"><path d="M12 2.8L22.5 21H1.5z" fill="#DC2626"/><path d="M12 9v5.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><circle cx="12" cy="17.6" r="1.3" fill="#fff"/></svg>
+            Do not use if you're allergic to any of these
+          </h3>
+          <ul class="mt-4 flex flex-wrap gap-2" aria-label="Allergens">
+            <li class="rounded-full bg-red-50 px-3.5 py-1.5 font-bold text-red-900 ring-1 ring-red-200">Pineapple</li>
+            <li class="rounded-full bg-red-50 px-3.5 py-1.5 font-bold text-red-900 ring-1 ring-red-200">Latex</li>
+            <li class="rounded-full bg-red-50 px-3.5 py-1.5 font-bold text-red-900 ring-1 ring-red-200">Birch pollen</li>
+            <li class="rounded-full bg-red-50 px-3.5 py-1.5 font-bold text-red-900 ring-1 ring-red-200">Grass pollen</li>
+            <li class="rounded-full bg-red-50 px-3.5 py-1.5 font-bold text-red-900 ring-1 ring-red-200">Celery</li>
+            <li class="rounded-full bg-red-50 px-3.5 py-1.5 font-bold text-red-900 ring-1 ring-red-200">Carrots</li>
+            <li class="rounded-full bg-red-50 px-3.5 py-1.5 font-bold text-red-900 ring-1 ring-red-200">Fennel</li>
+          </ul>
+          <p class="mt-4 text-ink/85">These share similar proteins with bromelain, so the risk of a cross-reaction is high.</p>
+        </article>
+
+        <article class="rounded-2xl border-l-[6px] border-red-600 bg-white p-5 ring-1 ring-red-200 md:p-7">
+          <h3 class="flex items-start gap-3 text-xl font-bold leading-snug text-red-800">
+            <svg viewBox="0 0 24 24" class="mt-0.5 h-6 w-6 shrink-0" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="none" stroke="#DC2626" stroke-width="2.4"/><path d="M5.5 5.5l13 13" stroke="#DC2626" stroke-width="2.4"/></svg>
+            Drug interactions: don't take it with blood thinners or NSAIDs
+          </h3>
+          <p class="mt-3">Avoid bromelain completely if you take <strong>blood thinners</strong> such as warfarin, Pradaxa (dabigatran) or aspirin, or <strong>NSAID painkillers</strong> such as ibuprofen, diclofenac or naproxen. Bromelain has an antiplatelet effect, so together they significantly increase your risk of bleeding.</p>
+          <p class="mt-4 border-t border-red-100 pt-4 text-ink/85">Taking antibiotics such as amoxicillin or tetracycline? Bromelain can increase how much of the antibiotic your body absorbs. Ask your doctor before combining them.</p>
+        </article>
+
+        <article class="grid items-center gap-4 rounded-2xl border-l-[6px] border-red-600 bg-white p-5 ring-1 ring-red-200 md:grid-cols-[auto_1fr] md:gap-8 md:p-7">
+          <p class="font-serif font-semibold leading-none text-red-700"><span class="text-[4.25rem] md:text-[5.5rem]">14</span><span class="ml-2 text-2xl md:text-3xl">days</span></p>
+          <div>
+            <h3 class="text-xl font-bold leading-snug text-red-800">Surgery precaution</h3>
+            <p class="mt-1">Stop taking bromelain at least 14 days (2 weeks) before any scheduled surgery or dental procedure, and tell your surgeon or dentist that you've been taking it.</p>
+          </div>
+        </article>
+
+        <div class="grid gap-5 md:grid-cols-2">
+          <article class="rounded-2xl border-l-[6px] border-amber-500 bg-amber-50 p-5 ring-1 ring-amber-200 md:p-7">
+            <h3 class="text-xl font-bold leading-snug text-amber-900">Ask a doctor first</h3>
+            <p class="mt-2 text-amber-950/90">Not recommended during pregnancy or while breastfeeding, or for children, unless a doctor recommends it.</p>
+          </article>
+          <article class="rounded-2xl border-l-[6px] border-amber-500 bg-amber-50 p-5 ring-1 ring-amber-200 md:p-7">
+            <h3 class="text-xl font-bold leading-snug text-amber-900">Common side effects</h3>
+            <p class="mt-2 text-amber-950/90">May cause mild nausea, diarrhoea or vomiting, or heavier-than-normal menstrual bleeding, mostly when taken in high doses.</p>
+          </article>
+        </div>
+
+        <article class="rounded-2xl bg-red-800 p-5 text-white md:p-7">
+          <h3 class="text-xl font-bold leading-snug">Stop taking it and get medical help straight away if you notice</h3>
+          <ul class="mt-3 grid gap-x-8 gap-y-1.5 text-red-50 sm:grid-cols-2">
+            <li class="flex gap-2.5"><span aria-hidden="true" class="mt-[0.6em] h-1.5 w-1.5 shrink-0 rounded-full bg-amber-300"></span>Rash, itching or hives</li>
+            <li class="flex gap-2.5"><span aria-hidden="true" class="mt-[0.6em] h-1.5 w-1.5 shrink-0 rounded-full bg-amber-300"></span>Swelling of the face, lips or throat</li>
+            <li class="flex gap-2.5"><span aria-hidden="true" class="mt-[0.6em] h-1.5 w-1.5 shrink-0 rounded-full bg-amber-300"></span>Difficulty breathing</li>
+            <li class="flex gap-2.5"><span aria-hidden="true" class="mt-[0.6em] h-1.5 w-1.5 shrink-0 rounded-full bg-amber-300"></span>Unusual bleeding or bruising</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- 6. FAQ -->
+    <section id="faq" class="bg-white">
+      <div class="mx-auto max-w-3xl px-5 py-12 md:py-20">
+        <h2 class="font-serif text-[1.9rem] font-semibold leading-[1.15] text-pine-900 md:text-[2.6rem]">Common questions</h2>
+
+        <div class="mt-6 border-b border-sage-200" id="faq-list">
+          <div class="acc-item border-t border-sage-200" data-open="false">
+            <h3><button type="button" class="acc-btn flex w-full items-center justify-between gap-4 py-5 text-left text-lg font-bold text-pine-900" aria-expanded="false" aria-controls="faq-1" id="faq-1-btn">How should I store the jar?<span class="acc-icon grid h-8 w-8 shrink-0 place-items-center rounded-full bg-mist text-pine-700" aria-hidden="true"><svg viewBox="0 0 16 16" class="h-4 w-4"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></button></h3>
+            <div class="acc-panel" id="faq-1" role="region" aria-labelledby="faq-1-btn"><div><p class="pb-5 pr-10 text-ink/85">Keep it in a cool, dry place away from direct sunlight, with the lid closed tightly after each use. Heat and moisture weaken the enzyme, so keep it away from the stove and always use a dry spoon.</p></div></div>
+          </div>
+          <div class="acc-item border-t border-sage-200" data-open="false">
+            <h3><button type="button" class="acc-btn flex w-full items-center justify-between gap-4 py-5 text-left text-lg font-bold text-pine-900" aria-expanded="false" aria-controls="faq-2" id="faq-2-btn">What is the shelf life?<span class="acc-icon grid h-8 w-8 shrink-0 place-items-center rounded-full bg-mist text-pine-700" aria-hidden="true"><svg viewBox="0 0 16 16" class="h-4 w-4"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></button></h3>
+            <div class="acc-panel" id="faq-2" role="region" aria-labelledby="faq-2-btn"><div><p class="pb-5 pr-10 text-ink/85">Use it by the best-before date printed on your jar's label. Stored as above, the powder keeps its strength until that date. At one half-spoon a day, a 15&nbsp;g jar lasts about one to two months.</p></div></div>
+          </div>
+          <div class="acc-item border-t border-sage-200" data-open="false">
+            <h3><button type="button" class="acc-btn flex w-full items-center justify-between gap-4 py-5 text-left text-lg font-bold text-pine-900" aria-expanded="false" aria-controls="faq-3" id="faq-3-btn">Can I take more than half a spoon?<span class="acc-icon grid h-8 w-8 shrink-0 place-items-center rounded-full bg-mist text-pine-700" aria-hidden="true"><svg viewBox="0 0 16 16" class="h-4 w-4"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></button></h3>
+            <div class="acc-panel" id="faq-3" role="region" aria-labelledby="faq-3-btn"><div><p class="pb-5 pr-10 text-ink/85">No. Stick to one level half-spoon a day, even if you don't notice a difference straight away. Higher doses make side effects such as nausea, diarrhoea and heavier periods more likely, and add to the bleeding risk.</p></div></div>
+          </div>
+          <div class="acc-item border-t border-sage-200" data-open="false">
+            <h3><button type="button" class="acc-btn flex w-full items-center justify-between gap-4 py-5 text-left text-lg font-bold text-pine-900" aria-expanded="false" aria-controls="faq-4" id="faq-4-btn">What if I miss a dose?<span class="acc-icon grid h-8 w-8 shrink-0 place-items-center rounded-full bg-mist text-pine-700" aria-hidden="true"><svg viewBox="0 0 16 16" class="h-4 w-4"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></button></h3>
+            <div class="acc-panel" id="faq-4" role="region" aria-labelledby="faq-4-btn"><div><p class="pb-5 pr-10 text-ink/85">Skip it and take your next half-spoon at the usual time the next day. Don't take two doses to make up for it.</p></div></div>
+          </div>
+          <div class="acc-item border-t border-sage-200" data-open="false">
+            <h3><button type="button" class="acc-btn flex w-full items-center justify-between gap-4 py-5 text-left text-lg font-bold text-pine-900" aria-expanded="false" aria-controls="faq-5" id="faq-5-btn">Can I mix it into tea once it has cooled a little?<span class="acc-icon grid h-8 w-8 shrink-0 place-items-center rounded-full bg-mist text-pine-700" aria-hidden="true"><svg viewBox="0 0 16 16" class="h-4 w-4"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></button></h3>
+            <div class="acc-panel" id="faq-5" role="region" aria-labelledby="faq-5-btn"><div><p class="pb-5 pr-10 text-ink/85">No. Warm drinks can still damage the enzymes. Use plain water at normal room temperature.</p></div></div>
+          </div>
+          <div class="acc-item border-t border-sage-200" data-open="false">
+            <h3><button type="button" class="acc-btn flex w-full items-center justify-between gap-4 py-5 text-left text-lg font-bold text-pine-900" aria-expanded="false" aria-controls="faq-6" id="faq-6-btn">I take other medicines. Is it safe for me?<span class="acc-icon grid h-8 w-8 shrink-0 place-items-center rounded-full bg-mist text-pine-700" aria-hidden="true"><svg viewBox="0 0 16 16" class="h-4 w-4"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></button></h3>
+            <div class="acc-panel" id="faq-6" role="region" aria-labelledby="faq-6-btn"><div><p class="pb-5 pr-10 text-ink/85">Check the <a href="#safety" class="font-bold text-pine-700 underline underline-offset-4">drug interactions</a> above first. If you take any regular medicine, ask your doctor or pharmacist before starting bromelain.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-sage-200 bg-mist">
+    <div class="mx-auto max-w-5xl px-5 py-10 md:py-14">
+      <p class="rounded-xl border border-sage-300 bg-white/70 p-4 text-[15px] italic leading-relaxed text-ink/75 md:p-5">“These statements have not been evaluated by the FDA, FSSAI, or other food authorities. This product is not intended to diagnose, treat, cure, or prevent any disease.”</p>
+
+      <div class="mt-8 grid items-center gap-6 sm:grid-cols-[auto_1fr] sm:gap-10">
+        <img src="assets/logo.png" alt="PineMagic logo" class="h-28 w-28">
+        <div class="space-y-1 text-[15px] text-ink/80">
+          <p class="text-base font-bold text-pine-900">HIZLI ESCALA LLP</p>
+          <p>Registered office: Ramanattukara, Kozhikode, Kerala, PIN 673633</p>
+          <p>Manufactured by Greenleaf Extractions Pvt Ltd, FSSAI Lic. No. <span class="tabular-nums">10014041000447</span></p>
+          <p class="pt-2 text-ink/60">© 2026 HIZLI ESCALA LLP</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      // ---- Timing tabs ----
+      var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+      var timeline = document.getElementById('timeline');
+      var on = ['bg-pine-900', 'text-white', 'shadow-sm'];
+      var off = ['text-pine-800', 'hover:bg-white/70'];
+
+      function select(tab, focus) {
+        tabs.forEach(function (t) {
+          var active = t === tab;
+          t.setAttribute('aria-selected', active ? 'true' : 'false');
+          t.tabIndex = active ? 0 : -1;
+          on.forEach(function (c) { t.classList.toggle(c, active); });
+          off.forEach(function (c) { t.classList.toggle(c, !active); });
+          document.getElementById(t.getAttribute('aria-controls')).hidden = !active;
+        });
+        timeline.setAttribute('data-mode', tab.getAttribute('data-mode'));
+        if (focus) tab.focus();
+      }
+      tabs.forEach(function (t, i) {
+        t.addEventListener('click', function () { select(t, false); });
+        t.addEventListener('keydown', function (e) {
+          var next = null;
+          if (e.key === 'ArrowRight') next = tabs[(i + 1) % tabs.length];
+          if (e.key === 'ArrowLeft') next = tabs[(i - 1 + tabs.length) % tabs.length];
+          if (e.key === 'Home') next = tabs[0];
+          if (e.key === 'End') next = tabs[tabs.length - 1];
+          if (next) { e.preventDefault(); select(next, true); }
+        });
+      });
+      select(tabs[0], false);
+
+      // ---- FAQ accordion ----
+      document.querySelectorAll('.acc-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var item = btn.closest('.acc-item');
+          var open = item.getAttribute('data-open') === 'true';
+          item.setAttribute('data-open', open ? 'false' : 'true');
+          btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
